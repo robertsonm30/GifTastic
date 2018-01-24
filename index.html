@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GifTastic Homework</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<h1>GifTastic Homework!</h1>
+			</div>
+			
+		</div>
+		<div class="row">
+			<div class="col">
+					<form id="animalform">
+						<label for="newAnimal">Add THE ANIMALS!</label>
+						<input type="text" id="animalinput"><br>
+						<input id="animalAdder" type="submit" value="Add Animals">
+					</form>
+			</div>
+			
+		</div>
+		<!-- WHERE THE ANIMALS PICS GO -->
+		<div class="row">
+			<div class="col">
+				<div id="animalsdrop">
+			</div>
+			
+		</div>
+			
+	</div>
+
+
+    
+
+
+
+    <script type="text/javascript">
+
+      var animals = ["Dog", "Cat"];
+
+      function renderButtons() {
+        $("#animalsdrop").empty();
+
+        for (var i = 0; i < animals.length; i++) {
+
+          var a = $("<button>");
+
+          a.addClass("animal");
+
+          a.attr("data-name", animals[i]);
+
+          a.text(animals[i]);
+
+          $("#animalsdrop").append(a);
+        }
+      }
+
+      $("#animalAdder").on("click", function(event) {
+        event.preventDefault();
+        var animal = $("#animalinput").val().trim();
+  
+        animals.push(animal);
+
+        renderButtons();
+      });
+
+      renderButtons();
+
+
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
